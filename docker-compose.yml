@@ -6,6 +6,8 @@ services:
     container_name: postgresDatabase
     ports:
       - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
     environment:
       - POSTGRES_PASSWORD=password
       - POSTGRES_USER=postgres
@@ -22,3 +24,6 @@ services:
       - "8080:8080"
     depends_on:
       - dbpostgresql
+
+volumes: 
+  db-data:
