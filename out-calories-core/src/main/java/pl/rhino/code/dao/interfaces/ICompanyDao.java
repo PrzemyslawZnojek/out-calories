@@ -5,4 +5,5 @@ import pl.rhino.code.model.Company;
 
 public interface ICompanyDao {
     Company findById(Long id);
+    void createCompany(Company company);
 }
