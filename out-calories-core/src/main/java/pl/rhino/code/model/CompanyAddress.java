@@ -1,18 +1,15 @@
 package pl.rhino.code.model;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import pl.rhino.code.model.util.Country;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-//@Entity
-@Data @Builder @NoArgsConstructor
+@Entity
 public class CompanyAddress {
 
-    //@Id
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "company_address_generator")
+    @SequenceGenerator(name = "company_address_generator", sequenceName = "company_address_id_seq")
     private long id;
     private long companyId;
     private Country country;
