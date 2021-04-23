@@ -1,15 +1,13 @@
 package pl.rhino.code.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Company {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "company_generator")
+    @SequenceGenerator(name = "company_generator", sequenceName = "company_id_seq")
     private long id;
     private String name;
 

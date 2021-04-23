@@ -24,7 +24,7 @@ public class CompanyDao implements ICompanyDao {
 
     @Override
     public void createCompany(Company company) {
-
+        entityManager.persist(company);
     }
 
 
