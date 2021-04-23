@@ -1,6 +1,5 @@
 package pl.rhino.code.dao.implementations;
 
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pl.rhino.code.dao.interfaces.ICompanyDao;
@@ -20,7 +19,13 @@ public class CompanyDao implements ICompanyDao {
 
     @Override
     public Company findById(Long id) {
-        Session currentSession = entityManager.unwrap(Session.class);
-        return currentSession.get(Company.class, id);
+        return entityManager.find(Company.class, id);
     }
+
+    @Override
+    public void createCompany(Company company) {
+        entityManager.persist(company);
+    }
+
+
 }

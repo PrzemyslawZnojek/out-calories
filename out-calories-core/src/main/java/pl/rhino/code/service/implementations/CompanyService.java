@@ -18,4 +18,12 @@ public class CompanyService implements ICompanyService {
     public Company findById(Long id) {
         return companyDao.findById(id);
     }
+
+    @Override
+    @Transactional
+    public void createCompany(Company company){
+        companyDao.createCompany(company);
+    }
+
+
 }
