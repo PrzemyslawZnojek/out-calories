@@ -11,6 +11,9 @@ public class CompanyAddress {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "company_address_generator")
     @SequenceGenerator(name = "company_address_generator", sequenceName = "company_address_id_seq")
     private long id;
+
+    @ManyToOne
+    
     private long companyId;
     private Country country;
     private String zipCode;
