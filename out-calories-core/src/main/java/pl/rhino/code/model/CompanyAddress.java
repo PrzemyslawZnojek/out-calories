@@ -13,8 +13,8 @@ public class CompanyAddress {
     private long id;
 
     @ManyToOne
-    
-    private long companyId;
+    @JoinColumn(name = "company_ID")
+    private Company company;
     private Country country;
     private String zipCode;
     private String city;

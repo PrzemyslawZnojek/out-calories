@@ -1,6 +1,7 @@
 package pl.rhino.code.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Company {
@@ -11,7 +12,16 @@ public class Company {
     private long id;
     private String name;
 
+    @OneToMany(mappedBy = "company")
+    private List<CompanyAddress> addresses;
+
     public Company() {
+    }
+
+    public Company(long id, String name, List<CompanyAddress> addresses) {
+        this.id = id;
+        this.name = name;
+        this.addresses = addresses;
     }
 
     public Company(long id, String name) {
@@ -33,5 +43,13 @@ public class Company {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<CompanyAddress> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<CompanyAddress> addresses) {
+        this.addresses = addresses;
     }
 }
