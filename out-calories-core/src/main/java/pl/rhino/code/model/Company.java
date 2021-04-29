@@ -1,6 +1,7 @@
 package pl.rhino.code.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Builder;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 

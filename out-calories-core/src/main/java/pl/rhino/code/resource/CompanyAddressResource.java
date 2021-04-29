@@ -1,14 +1,12 @@
 package pl.rhino.code.resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import pl.rhino.code.model.Company;
+import org.springframework.web.bind.annotation.*;
 import pl.rhino.code.model.CompanyAddress;
 import pl.rhino.code.service.interfaces.ICompanyAddressService;
 
+@RestController
+@RequestMapping(path = "/company-address", produces = "application/json")
 public class CompanyAddressResource {
 
     ICompanyAddressService service;

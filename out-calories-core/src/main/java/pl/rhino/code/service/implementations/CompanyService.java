@@ -10,8 +10,12 @@ import pl.rhino.code.service.interfaces.ICompanyService;
 @Service
 public class CompanyService implements ICompanyService {
 
-    @Autowired
     ICompanyDao companyDao;
+
+    @Autowired
+    public CompanyService(ICompanyDao companyDao) {
+        this.companyDao = companyDao;
+    }
 
     @Override
     @Transactional
