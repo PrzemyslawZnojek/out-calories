@@ -1,5 +1,9 @@
 package pl.rhino.code.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,6 +17,7 @@ public class Company {
     private String name;
 
     @OneToMany(mappedBy = "company")
+    @JsonManagedReference
     private List<CompanyAddress> addresses;
 
     public Company() {
