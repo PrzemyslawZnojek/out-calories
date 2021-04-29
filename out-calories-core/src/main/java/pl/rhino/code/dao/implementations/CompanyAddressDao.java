@@ -1,11 +1,13 @@
 package pl.rhino.code.dao.implementations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import pl.rhino.code.dao.interfaces.ICompanyAddressDao;
 import pl.rhino.code.model.CompanyAddress;
 
 import javax.persistence.EntityManager;
 
+@Repository
 public class CompanyAddressDao implements ICompanyAddressDao {
 
     private EntityManager entityManager;
