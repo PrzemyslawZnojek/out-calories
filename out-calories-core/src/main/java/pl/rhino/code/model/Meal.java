@@ -1,20 +1,27 @@
 package pl.rhino.code.model;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import pl.rhino.code.model.util.Currency;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-//@Entity
-@Data
+@Entity
 public class Meal {
 
-    //@Id
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "meal_id_generator")
+    @SequenceGenerator(name = "meal_id_generator", sequenceName = "meal_id_seq")
     private long id;
-    private long companyId;
+
+    @ManyToOne
+    @JoinColumn(name = "COMPANY_ID")
+    @JsonBackReference
+    Company company;
     private String name;
     private int kcalAmount;
     private int proteins;
     private int carbohydrates;
     private int fats;
+    private Double prize;
+    private Currency currency;
 }

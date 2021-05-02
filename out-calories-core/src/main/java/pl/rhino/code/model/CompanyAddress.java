@@ -9,8 +9,8 @@ import javax.persistence.*;
 public class CompanyAddress {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "company_address_generator")
-    @SequenceGenerator(name = "company_address_generator", sequenceName = "company_address_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "company_address_id_generator")
+    @SequenceGenerator(name = "company_address_id_generator", sequenceName = "company_address_id_seq")
     private long id;
 
     @ManyToOne

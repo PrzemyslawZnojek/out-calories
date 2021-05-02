@@ -12,8 +12,8 @@ import java.util.List;
 public class Company {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "company_generator")
-    @SequenceGenerator(name = "company_generator", sequenceName = "company_id_seq")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "company_id_generator")
+    @SequenceGenerator(name = "company_id_generator", sequenceName = "company_id_seq")
     private long id;
     private String name;
 
@@ -21,13 +21,11 @@ public class Company {
     @JsonManagedReference
     private List<CompanyAddress> addresses;
 
-    public Company() {
-    }
+    @OneToMany(mappedBy = "company")
+    @JsonManagedReference
+    private List<Meal> meals;
 
-    public Company(long id, String name, List<CompanyAddress> addresses) {
-        this.id = id;
-        this.name = name;
-        this.addresses = addresses;
+    public Company() {
     }
 
     public Company(long id, String name) {
