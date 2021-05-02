@@ -17,7 +17,9 @@ public class CompanyAddress {
     @JoinColumn(name = "COMPANY_ID")
     @JsonBackReference
     private Company company;
-    private String country;
+
+    @Enumerated(EnumType.STRING)
+    private Country country;
     private String zipCode;
     private String city;
     private String street;
@@ -26,15 +28,6 @@ public class CompanyAddress {
     public CompanyAddress() {
     }
 
-    public CompanyAddress(long id, Company company, String country, String zipCode, String city, String street, String apartment) {
-        this.id = id;
-        this.company = company;
-        this.country = country;
-        this.zipCode = zipCode;
-        this.city = city;
-        this.street = street;
-        this.apartment = apartment;
-    }
 
     public long getId() {
         return id;
@@ -52,11 +45,11 @@ public class CompanyAddress {
         this.company = company;
     }
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 
