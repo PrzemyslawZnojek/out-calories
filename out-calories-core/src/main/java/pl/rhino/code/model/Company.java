@@ -2,6 +2,7 @@ package pl.rhino.code.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Builder;
+import lombok.Data;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Data
 public class Company {
 
     @Id
@@ -25,30 +27,4 @@ public class Company {
     @JsonManagedReference
     private List<Meal> meals;
 
-    public Company() {
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<CompanyAddress> getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(List<CompanyAddress> addresses) {
-        this.addresses = addresses;
-    }
 }
