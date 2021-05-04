@@ -10,6 +10,7 @@ import pl.rhino.code.model.util.Currency;
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Meal {
 
     @Id
@@ -31,76 +32,4 @@ public class Meal {
     @Enumerated(EnumType.STRING)
     private Currency currency;
 
-
-        public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public Company getCompany() {
-        return company;
-    }
-
-    public void setCompany(Company company) {
-        this.company = company;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getKcalAmount() {
-        return kcalAmount;
-    }
-
-    public void setKcalAmount(int kcalAmount) {
-        this.kcalAmount = kcalAmount;
-    }
-
-    public int getProteins() {
-        return proteins;
-    }
-
-    public void setProteins(int proteins) {
-        this.proteins = proteins;
-    }
-
-    public int getCarbohydrates() {
-        return carbohydrates;
-    }
-
-    public void setCarbohydrates(int carbohydrates) {
-        this.carbohydrates = carbohydrates;
-    }
-
-    public int getFats() {
-        return fats;
-    }
-
-    public void setFats(int fats) {
-        this.fats = fats;
-    }
-
-    public Double getPrize() {
-        return prize;
-    }
-
-    public void setPrize(Double prize) {
-        this.prize = prize;
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(Currency currency) {
-        this.currency = currency;
-    }
 }
