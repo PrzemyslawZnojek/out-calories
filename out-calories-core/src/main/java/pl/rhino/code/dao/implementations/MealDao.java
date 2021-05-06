@@ -18,4 +18,9 @@ public class MealDao implements IMealDao {
     public Meal findById(Long id) {
         return entityManager.find(Meal.class, id);
     }
+
+    @Override
+    public void createMeal(Meal meal) {
+        entityManager.persist(meal);
+    }
 }

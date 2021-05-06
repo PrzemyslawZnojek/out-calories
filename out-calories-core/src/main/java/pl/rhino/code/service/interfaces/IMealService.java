@@ -5,4 +5,5 @@ import pl.rhino.code.model.Meal;
 public interface IMealService {
 
     Meal findById(Long id);
+    void createMeal(Meal meal);
 }
