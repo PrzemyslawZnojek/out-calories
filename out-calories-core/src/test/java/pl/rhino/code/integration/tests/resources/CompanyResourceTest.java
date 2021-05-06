@@ -35,7 +35,7 @@ public class CompanyResourceTest {
 
     @Test
     void validRetrievingById() throws Exception {
-        mockMvc.perform(get("/company-address/{id}", 1L)
+        mockMvc.perform(get("/company/{id}", 1L)
                 .contentType("application/json"));
         verify(service, times(1)).findById(1L);
     }
