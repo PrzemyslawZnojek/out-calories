@@ -4,4 +4,5 @@ import pl.rhino.code.model.Meal;
 
 public interface IMealDao {
     Meal findById(Long id);
+    void createMeal(Meal meal);
 }

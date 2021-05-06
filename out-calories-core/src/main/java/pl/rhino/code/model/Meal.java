@@ -1,16 +1,14 @@
 package pl.rhino.code.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import pl.rhino.code.model.util.Currency;
 
 import javax.persistence.*;
 
 @Entity
 @Data
+@Builder
 public class Meal {
 
     @Id
