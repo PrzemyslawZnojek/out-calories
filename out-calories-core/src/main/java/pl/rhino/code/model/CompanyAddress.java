@@ -1,6 +1,7 @@
 package pl.rhino.code.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Builder;
 import lombok.Data;
 import pl.rhino.code.model.util.Country;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
+@Builder
 public class CompanyAddress {
 
     @Id
