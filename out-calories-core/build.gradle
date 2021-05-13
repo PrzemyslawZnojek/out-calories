@@ -14,6 +14,7 @@ dependencies {
 	testAnnotationProcessor("org.projectlombok:lombok:1.18.8")
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation group: 'org.testcontainers', name: 'testcontainers', version: '1.15.3'
 }
 
 test {
