@@ -30,8 +30,8 @@ create table IF NOT EXISTS dbo_core.company_address (
 insert into dbo_core.company(ID, NAME) values (1, 'Biedronka');
 --insert into dbo_core.company(ID, NAME) values (2, 'Dino');
 --
---insert into dbo_core.company_address(ID, COMPANY_ID, COUNTRY, ZIP_CODE, CITY, STREET, APARTMENT)
---values (1, 1, "POLAND", "00-000", "Cracow", "Street", "1C");
+insert into dbo_core.company_address(ID, COMPANY_ID, COUNTRY, ZIP_CODE, CITY, STREET, APARTMENT)
+values (1, 1, 'POLAND', '00-000', 'Cracow', 'Street', '1C');
 --insert into dbo_core.company_address(ID, COMPANY_ID, COUNTRY, ZIP_CODE, CITY, STREET, APARTMENT)
 --values (2, 2, "POLAND", "00-000", "City", "Street", "2C");
 --
