@@ -27,7 +27,7 @@ create table IF NOT EXISTS dbo_core.company_address (
 	APARTMENT VARCHAR(20) not null
 );
 
-insert into dbo_core.company(ID, NAME) values (1, 'Biedronka');
+INSERT INTO dbo_core.company (NAME) values ('Biedronka');
 --insert into dbo_core.company(ID, NAME) values (2, 'Dino');
 --
 insert into dbo_core.company_address(ID, COMPANY_ID, COUNTRY, ZIP_CODE, CITY, STREET, APARTMENT)

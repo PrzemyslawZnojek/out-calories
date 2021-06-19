@@ -36,7 +36,7 @@ public class CompanyAddressDaoTest {
     }
 
     @Test
-    @Transactional
+   // @Transactional
     void findByIdShouldEndWithSuccess() {
         //insertCompanyAddress();
         CompanyAddress companyAddress = companyAddressDao.findById(1L);

@@ -22,7 +22,7 @@ public class OutCaloriesPostgresqlContainer extends PostgreSQLContainer<OutCalor
     @Override
     public void start() {
         super.start();
-        System.setProperty("DB_URL", container.getJdbcUrl()+"?TC_INITSCRIPT=db-init-script.sql");
+        System.setProperty("DB_URL", container.getJdbcUrl());
         System.setProperty("DB_USERNAME", container.getUsername());
         System.setProperty("DB_PASSWORD", container.getPassword());
     }
