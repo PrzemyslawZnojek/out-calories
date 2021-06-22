@@ -23,7 +23,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class CompanyDaoTest {
 
     @Container
-    public static PostgreSQLContainer<OutCaloriesPostgresqlContainer> postgreSQLContainer = OutCaloriesPostgresqlContainer.getInstance().withInitScript("db-init-script.sql");
+    public static PostgreSQLContainer<OutCaloriesPostgresqlContainer> postgreSQLContainer = OutCaloriesPostgresqlContainer.getInstance();
 
     @Autowired
     private CompanyDao companyDao;
@@ -38,5 +38,14 @@ public class CompanyDaoTest {
     void findByIdShouldEndWithSuccess() {
         Company byId = companyDao.findById(1L);
         assertEquals(byId.getId(), 1L);
+    }
+
+    @Test
+    @Transactional
+    void createCompanyEndWithSuccess() {
+        Company company = Company.builder()
+                .name("Company2")
+                .build();
+        companyDao.createCompany(company);
     }
 }

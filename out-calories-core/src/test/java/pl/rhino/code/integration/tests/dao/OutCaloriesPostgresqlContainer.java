@@ -13,7 +13,7 @@ public class OutCaloriesPostgresqlContainer extends PostgreSQLContainer<OutCalor
 
     public static OutCaloriesPostgresqlContainer getInstance() {
         if (container == null) {
-            container = new OutCaloriesPostgresqlContainer();
+            container = new OutCaloriesPostgresqlContainer().withInitScript("db-init-script.sql");
 
         }
         return container;
