@@ -35,6 +35,14 @@ public class CompanyResourceTest {
     }
 
     @Test
+    void validFindAll() throws Exception {
+        mockMvc.perform(get("/company/all", 1L)
+                .contentType("application/json")).andExpect(status().isOk());
+
+        verify(service, times(1)).findAll(1L);
+    }
+
+    @Test
     void validCreateCompany() throws Exception {
         Company newCompany = Company.builder().name("CompanyName").build();
         mockMvc.perform(post("/company/create")

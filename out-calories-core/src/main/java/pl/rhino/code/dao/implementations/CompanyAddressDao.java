@@ -22,6 +22,8 @@ public class CompanyAddressDao implements ICompanyAddressDao {
         return entityManager.find(CompanyAddress.class, id);
     }
 
+
+
     @Override
     public void createCompanyAddress(CompanyAddress companyAddress) {
         entityManager.persist(companyAddress);

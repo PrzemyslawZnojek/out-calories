@@ -37,6 +37,14 @@ public class CompanyAddressResourceTest {
     }
 
     @Test
+    void validFindAll() throws Exception {
+        mockMvc.perform(get("/company-address/all", 1L)
+                .contentType("application/json")).andExpect(status().isOk());
+
+        verify(service, times(1)).findAll(1L);
+    }
+
+    @Test
     void validCreateCompanyAddress() throws Exception {
         CompanyAddress newCompanyAddress = CompanyAddress.builder()
                 .country(Country.POLAND)

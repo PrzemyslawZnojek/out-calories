@@ -42,6 +42,12 @@ public class MealDaoTest {
 
     @Test
     @Transactional
+    void findAllTest() {
+
+    }
+
+    @Test
+    @Transactional
     void createCompanyEndWithSuccess() {
         Meal meal = Meal.builder()
                 .name("Meal1")

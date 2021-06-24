@@ -49,6 +49,12 @@ public class CompanyAddressDaoTest {
 
     @Test
     @Transactional
+    void findAllTest() {
+
+    }
+
+    @Test
+    @Transactional
     void insertCompanyAddress() {
         CompanyAddress newCompanyAddress = CompanyAddress.builder()
                 .city("Cracow")

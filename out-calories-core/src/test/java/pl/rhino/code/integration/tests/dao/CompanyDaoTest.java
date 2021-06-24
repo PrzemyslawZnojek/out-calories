@@ -42,6 +42,12 @@ public class CompanyDaoTest {
 
     @Test
     @Transactional
+    void findAllTest() {
+
+    }
+
+    @Test
+    @Transactional
     void createCompanyEndWithSuccess() {
         Company company = Company.builder()
                 .name("Company2")
