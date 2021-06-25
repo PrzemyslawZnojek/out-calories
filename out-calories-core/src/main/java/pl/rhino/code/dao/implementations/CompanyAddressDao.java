@@ -6,6 +6,7 @@ import pl.rhino.code.dao.interfaces.ICompanyAddressDao;
 import pl.rhino.code.model.CompanyAddress;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class CompanyAddressDao implements ICompanyAddressDao {
@@ -22,7 +23,10 @@ public class CompanyAddressDao implements ICompanyAddressDao {
         return entityManager.find(CompanyAddress.class, id);
     }
 
-
+    @Override
+    public List<CompanyAddress> findAll() {
+        return entityManager.createQuery("SELECT ca FROM CompanyAddress ca", CompanyAddress.class).getResultList();
+    }
 
     @Override
     public void createCompanyAddress(CompanyAddress companyAddress) {

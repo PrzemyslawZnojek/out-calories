@@ -15,6 +15,8 @@ import pl.rhino.code.model.Meal;
 
 import javax.transaction.Transactional;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -37,13 +39,14 @@ public class MealDaoTest {
     @Transactional
     void findByIdShouldEndWithSuccess() {
         Meal byId = mealDao.findById(1L);
-        assertEquals(byId.getId(), 1L);
+        assertEquals(1L, byId.getId());
     }
 
     @Test
     @Transactional
     void findAllTest() {
-
+        List<Meal> meals = mealDao.findAll();
+        assertEquals(1, meals.size());
     }
 
     @Test

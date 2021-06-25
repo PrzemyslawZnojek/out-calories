@@ -7,6 +7,8 @@ import pl.rhino.code.dao.interfaces.ICompanyAddressDao;
 import pl.rhino.code.model.CompanyAddress;
 import pl.rhino.code.service.interfaces.ICompanyAddressService;
 
+import java.util.List;
+
 @Service
 public class CompanyAddressService implements ICompanyAddressService {
 
@@ -21,6 +23,12 @@ public class CompanyAddressService implements ICompanyAddressService {
     @Transactional
     public CompanyAddress findById(Long id) {
         return companyAddressDao.findById(id);
+    }
+
+    @Override
+    @Transactional
+    public List<CompanyAddress> findAll() {
+        return companyAddressDao.findAll();
     }
 
     @Override

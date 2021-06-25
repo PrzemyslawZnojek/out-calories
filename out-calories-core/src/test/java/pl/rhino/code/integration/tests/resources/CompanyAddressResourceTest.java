@@ -41,7 +41,7 @@ public class CompanyAddressResourceTest {
         mockMvc.perform(get("/company-address/all", 1L)
                 .contentType("application/json")).andExpect(status().isOk());
 
-        verify(service, times(1)).findAll(1L);
+        verify(service, times(1)).findAll();
     }
 
     @Test

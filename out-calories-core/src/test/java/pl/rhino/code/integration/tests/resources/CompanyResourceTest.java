@@ -39,7 +39,7 @@ public class CompanyResourceTest {
         mockMvc.perform(get("/company/all", 1L)
                 .contentType("application/json")).andExpect(status().isOk());
 
-        verify(service, times(1)).findAll(1L);
+        verify(service, times(1)).findAll();
     }
 
     @Test
