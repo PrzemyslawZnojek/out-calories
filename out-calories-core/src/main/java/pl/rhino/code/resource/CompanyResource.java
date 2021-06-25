@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import pl.rhino.code.model.Company;
 import pl.rhino.code.service.interfaces.ICompanyService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(path = "/company", produces = "application/json")
 public class CompanyResource {
@@ -20,6 +22,9 @@ public class CompanyResource {
     public Company findById(@PathVariable("id") Long id){
         return service.findById(id);
     }
+
+    @GetMapping("/all")
+    public List<Company> findAll() { return service.findAll() ;}
 
     @PostMapping("create")
     public void createCompany(@RequestBody Company company){

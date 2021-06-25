@@ -16,6 +16,7 @@ import static org.mockito.Mockito.verify;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
 @WebMvcTest(controllers = MealResource.class)
@@ -34,6 +35,14 @@ public class MealResourceTest {
         mockMvc.perform(get("/meal/{id}", 1L)
                 .contentType("application/json"));
         verify(service, times(1)).findById(1L);
+    }
+
+    @Test
+    void validFindAll() throws Exception {
+        mockMvc.perform(get("/meal/all", 1L)
+                .contentType("application/json")).andExpect(status().isOk());
+
+        verify(service, times(1)).findAll();
     }
 
     @Test

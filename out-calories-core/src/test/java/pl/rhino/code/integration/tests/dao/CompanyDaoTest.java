@@ -15,6 +15,8 @@ import pl.rhino.code.model.Company;
 
 import javax.transaction.Transactional;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @RunWith(SpringRunner.class)
@@ -37,7 +39,14 @@ public class CompanyDaoTest {
     @Transactional
     void findByIdShouldEndWithSuccess() {
         Company byId = companyDao.findById(1L);
-        assertEquals(byId.getId(), 1L);
+        assertEquals(1L, byId.getId());
+    }
+
+    @Test
+    @Transactional
+    void findAllTest() {
+        List<Company> companies = companyDao.findAll();
+        assertEquals(1, companies.size());
     }
 
     @Test

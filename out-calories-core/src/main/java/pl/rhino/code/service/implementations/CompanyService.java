@@ -7,6 +7,8 @@ import pl.rhino.code.dao.interfaces.ICompanyDao;
 import pl.rhino.code.model.Company;
 import pl.rhino.code.service.interfaces.ICompanyService;
 
+import java.util.List;
+
 @Service
 public class CompanyService implements ICompanyService {
 
@@ -25,9 +27,12 @@ public class CompanyService implements ICompanyService {
 
     @Override
     @Transactional
+    public List<Company> findAll() { return companyDao.findAll(); }
+
+    @Override
+    @Transactional
     public void createCompany(Company company){
         companyDao.createCompany(company);
     }
-
 
 }

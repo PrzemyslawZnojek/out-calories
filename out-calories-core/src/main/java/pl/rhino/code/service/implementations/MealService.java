@@ -7,6 +7,8 @@ import pl.rhino.code.dao.interfaces.IMealDao;
 import pl.rhino.code.model.Meal;
 import pl.rhino.code.service.interfaces.IMealService;
 
+import java.util.List;
+
 @Service
 public class MealService implements IMealService {
 
@@ -22,6 +24,10 @@ public class MealService implements IMealService {
     public Meal findById(Long id) {
         return mealDao.findById(id);
     }
+
+    @Override
+    @Transactional
+    public List<Meal> findAll() { return mealDao.findAll(); }
 
     @Override
     @Transactional

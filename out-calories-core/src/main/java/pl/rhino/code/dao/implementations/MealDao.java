@@ -6,6 +6,7 @@ import pl.rhino.code.dao.interfaces.IMealDao;
 import pl.rhino.code.model.Meal;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class MealDao implements IMealDao {
@@ -17,6 +18,11 @@ public class MealDao implements IMealDao {
     @Override
     public Meal findById(Long id) {
         return entityManager.find(Meal.class, id);
+    }
+
+    @Override
+    public List<Meal> findAll() {
+        return entityManager.createQuery("SELECT m FROM Meal m", Meal.class).getResultList();
     }
 
     @Override

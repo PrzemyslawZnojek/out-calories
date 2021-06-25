@@ -7,6 +7,7 @@ import pl.rhino.code.model.Company;
 
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public class CompanyDao implements ICompanyDao {
@@ -26,9 +27,13 @@ public class CompanyDao implements ICompanyDao {
 
     @Override
     @Transactional
+    public List<Company> findAll() {
+        return entityManager.createQuery("SELECT c FROM Company c", Company.class).getResultList();
+    }
+
+    @Override
+    @Transactional
     public void createCompany(Company company) {
         entityManager.persist(company);
     }
-
-
 }
