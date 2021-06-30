@@ -1,0 +1,18 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet author="pznojek" id="init-000">
+        <sqlFile path="changes/init-tables/CREATE_TABLE_COMPANY.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changes/init-tables/CREATE_TABLE_COMPANY_ADDRESS.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changes/init-tables/CREATE_TABLE_MEAL.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet author="pznojek" id="init-001">
+        <sqlFile path="changes/insert-values-to-init-tables/INSERT_VALUES_COMPANY.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changes/insert-values-to-init-tables/INSERT_VALUES_COMPANY_ADDRESS.sql" relativeToChangelogFile="true"/>
+        <sqlFile path="changes/insert-values-to-init-tables/INSERT_VALUES_MEAL.sql" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog>
